@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:">
+  <title>A2 Flyers – příprava na zkoušku</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="#/">✈️ A2 Flyers <span>příprava</span></a>
+    <nav id="nav">
+      <a href="#/">Domů</a>
+      <a href="#/info">O zkoušce</a>
+      <a href="#/vocab">Slovíčka</a>
+      <a href="#/listening">Listening</a>
+      <a href="#/rw">Reading &amp; Writing</a>
+      <a href="#/speaking">Speaking</a>
+      <a href="#/grammar">Gramatika</a>
+      <a href="#/mock">Zkušební test</a>
+      <a href="#/progress">Pokrok</a>
+    </nav>
+  </header>
+
+  <main id="app"></main>
+
+  <footer>
+    Neoficiální cvičný materiál. Není spojen s Cambridge University Press &amp; Assessment.
+    Úlohy jsou vlastní, vytvořené podle zveřejněného formátu zkoušky A2 Flyers.
+  </footer>
+
+  <template id="tpl-home">
+    <section class="hero">
+      <h1>Připrav se na Cambridge A2 Flyers! ✈️</h1>
+      <p>Procvičuj všechny části zkoušky – poslech, čtení a psaní i mluvení – v úlohách stejného typu jako u skutečné zkoušky.</p>
+      <div class="stats">
+        <div><b data-stat="words"></b><span>naučených slovíček</span></div>
+        <div><b data-stat="done"></b><span>procvičených cvičení</span></div>
+      </div>
+    </section>
+    <div class="grid">
+      <a class="tile link" href="#/info"><div class="big">ℹ️</div><h3>O zkoušce</h3><p>Jak zkouška vypadá, hodnocení, tipy.</p></a>
+      <a class="tile link" href="#/vocab"><div class="big">🔤</div><h3>Slovíčka</h3><p>Kartičky, překlad, diktát, definice.</p></a>
+      <a class="tile link" href="#/listening"><div class="big">🎧</div><h3>Listening</h3><p>5 částí, nahrávky 2×.</p></a>
+      <a class="tile link" href="#/rw"><div class="big">📖</div><h3>Reading &amp; Writing</h3><p>7 částí včetně psaní příběhu.</p></a>
+      <a class="tile link" href="#/speaking"><div class="big">🗣️</div><h3>Speaking</h3><p>Rozdíly, otázky, příběh, o mně.</p></a>
+      <a class="tile link" href="#/grammar"><div class="big">🧩</div><h3>Gramatika</h3><p>Vysvětlení česky + kvízy.</p></a>
+      <a class="tile link" href="#/mock"><div class="big">📝</div><h3>Zkušební test</h3><p>Listening + Reading &amp; Writing s časomírou.</p></a>
+      <a class="tile link" href="#/progress"><div class="big">🏆</div><h3>Pokrok</h3><p>Výsledky a štíty.</p></a>
+    </div>
+  </template>
+
+  <template id="tpl-info">
+    <section class="info">
+      <h2>Cambridge English A2 Flyers – co je dobré vědět</h2>
+      <p><b>A2 Flyers</b> (dříve YLE Flyers) je nejvyšší ze tří zkoušek Cambridge English pro děti
+        (Pre A1 Starters → A1 Movers → <b>A2 Flyers</b>). Odpovídá úrovni <b>A2</b> Společného evropského
+        referenčního rámce (SERR / CEFR) a je určena dětem zhruba <b>7–12 let</b>. Obtížností odpovídá zkoušce
+        A2 Key for Schools, ale témata a slovní zásoba jsou přizpůsobeny dětem. Pro žáky bilingvních tříd je to
+        typický cíl na konci 1. stupně.</p>
+
+      <h3>Základní fakta</h3>
+      <table>
+        <tr><th>Úroveň</th><td>CEFR A2</td></tr>
+        <tr><th>Části (papers)</th><td>3 – Listening, Reading &amp; Writing, Speaking</td></tr>
+        <tr><th>Celková délka</th><td>přibližně 1 hodina 15 minut</td></tr>
+        <tr><th>Forma</th><td>papírová (Speaking s examinerem) nebo digitální (na počítači/tabletu)</td></tr>
+        <tr><th>Výsledek</th><td>neexistuje „neprospěl“ – každé dítě dostane certifikát</td></tr>
+        <tr><th>Hodnocení</th><td>štíty (shields): max. 5 za každou část, celkem max. <b>15 štítů</b></td></tr>
+      </table>
+
+      <h3>1. Listening – cca 25 minut, 5 částí, 25 otázek</h3>
+      <p>Každou nahrávku dítě slyší <b>dvakrát</b>. Každá část začíná příkladem.</p>
+      <table>
+        <tr><th>Part 1</th><td>Velký obrázek s lidmi, okolo jména. Přiřadit (čarou) jména k osobám podle popisu. <i>5 otázek</i></td></tr>
+        <tr><th>Part 2</th><td>Formulář / zápisník s mezerami – doplnit slovo nebo číslo (jména se hláskují!). <i>5 otázek</i></td></tr>
+        <tr><th>Part 3</th><td>Vlevo pojmenované osoby/místa, vpravo obrázky s písmeny – přiřadit písmeno. <i>5 otázek</i></td></tr>
+        <tr><th>Part 4</th><td>5 krátkých rozhovorů, u každého otázka a 3 obrázky – zaškrtnout správný. <i>5 otázek</i></td></tr>
+        <tr><th>Part 5</th><td>Velký obrázek – 3× vybarvit podle pokynu a 2× něco napsat. <i>5 otázek</i></td></tr>
+      </table>
+
+      <h3>2. Reading &amp; Writing – 40 minut, 7 částí, 44 otázek</h3>
+      <p>Ve všech částech se vyžaduje <b>správný pravopis</b>.</p>
+      <table>
+        <tr><th>Part 1</th><td>15 slov a 10 definic – ke každé definici napsat správné slovo. <i>10 otázek</i></td></tr>
+        <tr><th>Part 2</th><td>Rozhovor – ke každé replice vybrat odpověď z nabídky A–H. <i>5 otázek</i></td></tr>
+        <tr><th>Part 3</th><td>Příběh s mezerami (podstatná jména, přídavná jména, slovesa), slova v rámečku + výběr nejlepšího názvu. <i>6 otázek</i></td></tr>
+        <tr><th>Part 4</th><td>Naučný text – u každé mezery výběr ze 3 slov (gramatika). <i>10 otázek</i></td></tr>
+        <tr><th>Part 5</th><td>Příběh + 7 vět k doplnění 1–4 slovy. <i>7 otázek</i></td></tr>
+        <tr><th>Part 6</th><td>Dopis nebo deník s 5 mezerami – doplnit slovo bez nabídky. <i>5 otázek</i></td></tr>
+        <tr><th>Part 7</th><td>Napsat příběh podle 3 obrázků – <b>20 a více slov</b>. <i>1 úloha</i></td></tr>
+      </table>
+
+      <h3>3. Speaking – 7–9 minut, 4 části</h3>
+      <p>U papírové zkoušky mluví dítě samo s examinerem (napřed ho uvede někdo známý), u digitální odpovídá animované postavě.</p>
+      <table>
+        <tr><th>Part 1</th><td>Dva podobné obrázky – examiner popisuje svůj, dítě říká, co je na jeho obrázku jinak.</td></tr>
+        <tr><th>Part 2</th><td>Výměna informací – examiner se ptá na údaje z kartičky dítěte, pak se dítě ptá examinera.</td></tr>
+        <tr><th>Part 3</th><td>Příběh v 5 obrázcích – examiner popíše první, dítě pokračuje.</td></tr>
+        <tr><th>Part 4</th><td>Osobní otázky – škola, rodina, narozeniny, koníčky, prázdniny.</td></tr>
+      </table>
+
+      <h3>Hodnocení a výsledky</h3>
+      <ul>
+        <li>Za každou ze 3 částí získá dítě 1–5 štítů. 1 štít = v této dovednosti se může hodně zlepšit, 5 štítů = většina odpovědí byla správně.</li>
+        <li>Děti s celkem cca <b>10 a více štíty</b> jsou připravené začít se připravovat na další úroveň (A2 Key for Schools).</li>
+        <li>Všechny části se skládají během max. 5 dnů; Listening vždy před Reading &amp; Writing.</li>
+        <li>Certifikát přichází obvykle za několik týdnů (digitální verze rychleji). Termíny zajišťují autorizovaná zkušební centra.</li>
+      </ul>
+
+      <h3>Co by mělo dítě na úrovni A2 Flyers umět</h3>
+      <ul>
+        <li>rozumět pokynům složeným z více vět, ptát se na základní věci,</li>
+        <li>spojovat věty spojkami (and, but, because, so, when, if…),</li>
+        <li>vyprávět a napsat jednoduchý příběh, popsat činnosti a věci,</li>
+        <li>číst texty s minulými časy (past simple, past continuous), rozumět present perfect, budoucnosti (will, going to), modálním slovesům (might, should, must…),</li>
+        <li>používat stupňování přídavných jmen, vztažné věty (who, which, where) a tázací dovětky.</li>
+      </ul>
+
+      <h3>Tipy na přípravu</h3>
+      <ul>
+        <li>Pravidelně a krátce (15–20 minut denně) – slovíčka podle témat, nahlas a s pravopisem.</li>
+        <li>Učit se slovíčka z oficiálního <b>wordlistu</b> pro Pre A1 Starters, A1 Movers a A2 Flyers (Flyers obsahuje i slova z nižších úrovní).</li>
+        <li>U poslechu si nejdřív přečíst otázky a podívat se na obrázky; počkat na druhý poslech a zkontrolovat.</li>
+        <li>U psaní (Part 7) napsat <b>aspoň 20 slov</b>, popsat všechny 3 obrázky a použít minulý čas.</li>
+        <li>U mluvení odpovídat celými větami a přidat něco navíc. Když nerozumím: <i>„Sorry, can you say that again, please?“</i></li>
+        <li>Projít si oficiální ukázkové testy (sample tests) a videa ze Speakingu na webu Cambridge.</li>
+      </ul>
+
+      <h3>Oficiální zdroje</h3>
+      <ul>
+        <li><a href="https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/flyers/" target="_blank" rel="noopener noreferrer">A2 Flyers – Cambridge English</a></li>
+        <li><a href="https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/flyers/format" target="_blank" rel="noopener noreferrer">Formát zkoušky (Exam format)</a></li>
+        <li><a href="https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/flyers/preparation" target="_blank" rel="noopener noreferrer">Příprava – wordlist, ukázkové testy, videa</a></li>
+      </ul>
+    </section>
+  </template>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
